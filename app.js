@@ -1,10 +1,10 @@
-var PORT = process.env.PORT || 3000;
+var port = process.env.PORT || 3000;
 var express = require('express');
 var app = express();
 var http = require('http').Server(app);
 
 app.use(express.static(__dirname +'/public'));
 
-http.listen(PORT, function () {
-  console.log('Server is starting at port ' + PORT);
+http.listen(port, function () {
+  console.log('Server is starting at port ' + port);
 });
