@@ -1,10 +1,19 @@
 var socket = io();
+var name = getQueryVariable('name');
+
+
 $('form').submit(function(){
-  socket.emit('chat message', $('#m').val());
+  socket.emit('message', {
+    name: name,
+    text: $('#m').val()
+  });
+
   $('#m').val('');
   return false;
 });
 
-socket.on('chat message', function(msg){
-    $('#messages').append($('<li>').text(msg));
-  });
+socket.on('message', function(msg){
+  $('#messages').append('<p><strong>' + msg.name +'</strong></p>');
+  $('#messages').append('<p>' + msg.text +'</p>');
+  $('#messages').append('<br/>');
+});

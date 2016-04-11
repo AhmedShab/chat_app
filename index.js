@@ -1,4 +1,4 @@
-var port = process.env.PORT || 3000;
+var port = process.env.PORT || 5000;
 var express = require('express');
 var app = express();
 var http = require('http').Server(app);
@@ -8,8 +8,12 @@ app.use(express.static(__dirname +'/public'));
 
 io.on('connection', function(socket){
   console.log("new user is has joined in");
-  socket.on('chat message', function(msg){
-    io.emit('chat message', msg);
+  socket.on('message', function(msg){
+    io.emit('message', msg);
+  });
+
+  socket.on('disconnect', function () {
+    io.emit('message', 'user has disconnected');
   });
 });
 
