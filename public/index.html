@@ -3,21 +3,29 @@
 <head>
   <meta charset="utf-8">
   <link rel="stylesheet" href="./css/bootstrap.min.css">
+  <link rel="stylesheet" href="./css/styles.css">
 </head>
 <body>
-  <div class="container">
-    <div class="row">
-      <div class="col-md-4 col-md-offset-4">
-        <h1>Join Chat</h1>
-        <form action="/chat.html">
-          <div class="form-group">
-            <label>Nick Name</label>
-            <input type="text" name="name" class="form-control" id="" placeholder="">
-          </div>
-          <div class="form-group">
-            <input type="submit" value="Join" class="btn btn-primary">
-          </div>
-        </form>
+  <div class="vertical-center">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 col-md-offset-4 well">
+          <h1>Join Chat</h1>
+          <form action="/chat.html">
+            <div class="form-group">
+              <label>Nick Name</label>
+              <div class="input-group">
+                <span class="input-group-addon">
+                  <i class="glyphicon glyphicon-user"></i>
+                </span>
+                <input type="text" name="name" class="form-control" id="" placeholder="">
+              </div>
+            </div>
+            <div class="form-group">
+              <input type="submit" value="Join" class="btn btn-primary btn-block">
+            </div>
+          </form>
+        </div>
       </div>
     </div>
   </div>
