@@ -1,13 +1,25 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-  </head>
-  <body>
-    <h1>Join Chat</h1>
-    <form action="/chat.html">
-      <label>Nick Name</label>
-      <input type="text" name="name">
-    </form>
-  </body>
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="./css/bootstrap.min.css">
+</head>
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4 col-md-offset-4">
+        <h1>Join Chat</h1>
+        <form action="/chat.html">
+          <div class="form-group">
+            <label>Nick Name</label>
+            <input type="text" name="name" class="form-control" id="" placeholder="">
+          </div>
+          <div class="form-group">
+            <input type="submit" value="Join" class="btn btn-primary">
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</body>
 </html>
