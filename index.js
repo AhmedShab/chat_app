@@ -9,7 +9,6 @@ var clients = [];
 // mongoose.connect('mongodb://localhost:27017/chat', function (err) {
 mongoose.connect('mongodb://ahmed:ahmed16@ds023560.mlab.com:23560/ahmed-chat-db', function (err) {
 
-})
   if (err) {
     console.log('failed to connect');
   }
