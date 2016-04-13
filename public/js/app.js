@@ -18,7 +18,17 @@ $('form').submit(function(){
   return false;
 });
 
+socket.on('load messages', function (data) {
+  for (var i = 0; i < data.length; i++) {
+    displayMessages(data[i]);
+  }
+});
+
 socket.on('message', function(msg){
+  displayMessages(msg);
+});
+
+function displayMessages(msg) {
   var $messages = jQuery('.messages');
   var $message = jQuery('<li class="list-group-item"></li>');
 
@@ -26,4 +36,4 @@ socket.on('message', function(msg){
   $message.append('<p class="text-left">' + msg.text +'</p>');
   // $message.append('<br/>');
   $messages.append($message);
-});
+}
