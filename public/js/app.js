@@ -19,7 +19,11 @@ $('form').submit(function(){
 });
 
 socket.on('message', function(msg){
-  $('#messages').append('<p><strong>' + msg.name +'</strong></p>');
-  $('#messages').append('<p>' + msg.text +'</p>');
-  $('#messages').append('<br/>');
+  var $messages = jQuery('.messages');
+  var $message = jQuery('<li class="list-group-item"></li>');
+
+  $message.append('<p><strong>' + msg.name +'</strong></p>');
+  $message.append('<p>' + msg.text +'</p>');
+  $message.append('<br/>');
+  $messages.append($message);
 });
