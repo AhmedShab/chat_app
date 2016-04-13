@@ -22,8 +22,8 @@ socket.on('message', function(msg){
   var $messages = jQuery('.messages');
   var $message = jQuery('<li class="list-group-item"></li>');
 
-  $message.append('<p><strong>' + msg.name +'</strong></p>');
-  $message.append('<p>' + msg.text +'</p>');
-  $message.append('<br/>');
+  $message.append('<p class="text-left"><strong>' + msg.name +'</strong></p>');
+  $message.append('<p class="text-left">' + msg.text +'</p>');
+  // $message.append('<br/>');
   $messages.append($message);
 });
