@@ -1,8 +1,8 @@
 var port = process.env.PORT || 3000;
 var express = require('express');
 var app = express();
-var https = require('https').Server(app);
-var io = require('socket.io')(https);
+var http = require('http').Server(app);
+var io = require('socket.io')(http);
 var mongoose = require('mongoose');
 var clients = [];
 
@@ -65,6 +65,6 @@ io.on('connection', function(socket){
 
 
 
-https.listen(port, function () {
+http.listen(port, function () {
   console.log('Server is starting at port ' + port);
 });
